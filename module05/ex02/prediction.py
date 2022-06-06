@@ -16,11 +16,14 @@ def simple_predict(x, theta):
         return None
     if len(x) == 0 or len(theta) == 0:
         return None
-    if x.ndim != 1 or theta.ndim != 1:
-        return None
-    if x.size <= 2 or theta.size != 2:
+    if x.ndim == 1:
+        x = x.reshape(x.size, 1)
+    if theta.ndim == 1:
+        theta = theta.reshape(theta.size, 1)
+    if x.shape[1] != 1 or theta.shape[1] != 1 or theta.shape[0] != 2:
         return None
     y_hat = np.zeros(x.size)
     for col in range(x.size):
         y_hat[col] = theta[0] + theta[1] * x[col]
     return y_hat
+

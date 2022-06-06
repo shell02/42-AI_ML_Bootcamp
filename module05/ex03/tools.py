@@ -14,7 +14,5 @@ def add_intercept(x):
     if type(x) != np.ndarray or len(x) == 0:
         return None
     if x.ndim == 1:
-        new_x = x.reshape(x.size, 1)
-    else:
-        new_x = x
-    return np.insert(new_x, 0, 1, axis=1)
+        x = x.reshape(x.size, 1)
+    return np.insert(x, 0, 1, axis=1)
