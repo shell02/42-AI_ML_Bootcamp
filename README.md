@@ -1,1 +1,1 @@
-# 42-AI_Machine_Learning_Bootcamp
+# 42-AI_ML_Bootcamp
